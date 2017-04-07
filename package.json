@@ -1,0 +1,42 @@
+{
+  "name": "run-race-results-scraper",
+  "version": "1.2.0",
+  "description": "simple scraper for runraceresults.com",
+  "main": "index.js",
+  "scripts": {
+    "build": "npm run clean:build && npm run build:babel",
+    "build:babel": "./node_modules/.bin/babel src --out-file dist/r3-scraper.js",
+    "start": "./node_modules/.bin/cross-env NODE_ENV=production ./node_modules/.bin/babel-node src/index.js",
+    "start:dev": "./node_modules/.bin/babel-node src/index.js",
+    "start:clean": "npm run clean && npm run start",
+    "clean": "rm -rf ./output && mkdir output",
+    "clean:build": "rm -rf ./dist && mkdir dist"
+  },
+  "bin": {
+    "r3-scraper": "./dist/r3-scraper.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://gitlab.com/staggering-design/run-race-results-scraper"
+  },
+  "keywords": [
+    "runraceresults.com",
+    "scraper",
+    "nodejs",
+    "cheerio"
+  ],
+  "author": "shotor",
+  "license": "UNLICENSED",
+  "dependencies": {
+    "babel-cli": "^6.23.0",
+    "babel-plugin-syntax-flow": "^6.18.0",
+    "babel-plugin-transform-flow-strip-types": "^6.22.0",
+    "babel-preset-es2015": "^6.22.0",
+    "babel-preset-stage-0": "^6.22.0",
+    "cheerio": "^0.22.0",
+    "cross-env": "^3.2.3",
+    "csv-stringify": "^1.0.4",
+    "lodash": "^4.17.4",
+    "node-fetch": "^1.6.3"
+  }
+}

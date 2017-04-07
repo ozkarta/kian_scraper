@@ -1,0 +1,9 @@
+# nodejs
+node_modules/
+*.log
+
+# vscode
+.vscode/
+
+# ignore output folder
+output/
